@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Automation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+
+        header {
+            background-color: #0000FF;
+            color: white;
+            padding: 20px 20px 20px 40px;
+            text-align: left;
+        }
+
+        header a {
+            color: white;
+            text-decoration: none;
+        }
+
+        header a:hover {
+            text-decoration: underline;
+        }
+
+        .dashboard-title {
+            text-align: left;
+            margin: 20px 20px 0 20px;
+            padding-left: 30px;
+            color: #555;
+        }
+
+        .dashboard {
+            display: flex;
+            flex-wrap: nowrap;
+            padding: 20px;
+            gap: 20px;
+        }
+
+        .divisor {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .second-divisor {
+            flex: 0 0 25%;
+            margin-left: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .row {
+            display: flex;
+            gap: 20px;
+            align-items: stretch;
+        }
+
+        .card {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .recent-activity {
+            overflow-y: auto;
+            max-height: 100%;
+            position: relative;
+        }
+
+        .activity {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            font-size: 14px;
+            line-height: 1.4;
+            position: relative;
+        }
+
+        .activity span {
+            font-weight: bold;
+            margin-right: 8px;
+            width: 40px;
+            text-align: right;
+        }
+
+        .activity .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin: 0 8px;
+            flex-shrink: 0;
+        }
+
+        .activity p {
+            margin: 0;
+        }
+
+        .timeline {
+            position: absolute;
+            top: 10px;
+            left: 60px;
+            width: 2px;
+            background-color: #ddd;
+            height: calc(100% - 10px);
+        }
+
+        .activity:last-child .timeline {
+            display: none;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        .data {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #4CAF50;
+        }
+
+        @media (max-width: 768px) {
+            .dashboard {
+                flex-wrap: wrap;
+            }
+
+            .divisor, .second-divisor {
+                flex: 0 0 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>
+        <a href="index.html" style="color: white; text-decoration: none;">Automation Testing</a>
+    </h1>
+</header>
+
+<h2 class="dashboard-title">Dashboard</h2>
+
+<div class="dashboard">
+    <!-- First Divisor -->
+    <div class="divisor">
+        <div class="row">
+            <div class="card">
+                <h3>Sales</h3>
+                <p class="data">$150,000</p>
+                <p>Up by 10% from last month</p>
+            </div>
+            <div class="card">
+                <h3>Revenue</h3>
+                <p class="data">$250,000</p>
+                <p>Growth steady at 5%</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="card">
+                <h3>Customers</h3>
+                <p class="data">1,200</p>
+                <p>New customers this month: 150</p>
+            </div>
+            <div class="card">
+                <h3>Reports</h3>
+                <p class="data">35</p>
+                <p>Reports generated this week</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Second Divisor -->
+    <div class="second-divisor">
+        <div class="card">
+            <h3>Recent Activity</h3>
+            <div class="recent-activity">
+                <div class="activity">
+                    <span>05m</span>
+                    <div class="dot" style="background-color: red;"></div>
+                    <p>Order #1023 placed by John Doe.</p>
+                    <div class="timeline"></div>
+                </div>
+                <div class="activity">
+                    <span>10m</span>
+                    <div class="dot" style="background-color: blue;"></div>
+                    <p>New customer signed up: Jane Smith.</p>
+                    <div class="timeline"></div>
+                </div>
+                <div class="activity">
+                    <span>15m</span>
+                    <div class="dot" style="background-color: green;"></div>
+                    <p>Revenue milestone achieved: $250,000.</p>
+                    <div class="timeline"></div>
+                </div>
+                <div class="activity">
+                    <span>20m</span>
+                    <div class="dot" style="background-color: orange;"></div>
+                    <p>Weekly report generated successfully.</p>
+                    <div class="timeline"></div>
+                </div>
+                <div class="activity">
+                    <span>25m</span>
+                    <div class="dot" style="background-color: purple;"></div>
+                    <p>System maintenance completed.</p>
+                    <div class="timeline"></div>
+                </div>
+                <div class="activity">
+                    <span>30m</span>
+                    <div class="dot" style="background-color: yellow;"></div>
+                    <p>Order #1024 placed by Alice Green.</p>
+                    <div class="timeline"></div>
+                </div>
+                <div class="activity">
+                    <span>35m</span>
+                    <div class="dot" style="background-color: teal;"></div>
+                    <p>New product added to inventory.</p>
+                    <div class="timeline"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
